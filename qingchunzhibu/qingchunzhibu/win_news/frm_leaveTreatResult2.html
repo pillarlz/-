@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui-win.css" />
+        <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+        <style>
+            #main {
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                width: 90%;
+                margin-left: 5%;
+                height: 100%;
+                padding-top: 20px;
+            }
+            
+            .title {
+                border-bottom: 1px solid #a0a0a0;
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-align-items: center;
+                -webkit-box-align: center;
+                padding: 5px;
+            }
+            
+            .title .img {
+                position: relative;
+                width: 30%;
+                height: 0;
+                padding-top: 30%;
+            }
+            
+            .title .img .imgin {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .title .img .imgin img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+            
+            .title .news {
+                width: 70%;
+            }
+            
+            .title .news p {
+                padding: 6px;
+                color: #000000;
+                font-size: 15px;
+            }
+            
+            .content {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                color: #000000;
+                font-size: 25px;
+                font-weight: bold;
+                overflow: hidden;
+            }
+            
+            .p-row-1 {
+                display: -webkit-box;
+                display: -webkit-flex;
+                font-size: 16px;
+                padding: 4px 6px;
+            }
+            
+            .p-row-2 {
+                color: #000000;
+                font-weight: 500;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+            }
+            
+            .p-row-3 {
+                color: #777777;
+                font-weight: 400;
+                -webkit-box-flex: 3;
+                -webkit-flex: 3;
+            }
+            
+            .agree,
+            .disagree {
+                width: 35%;
+                color: #FFFFFF;
+                border-radius: 20px;
+            }
+            
+            .agree {
+                color: #FFFFFF;
+                font-size: 16px;
+                font-weight: 500px;
+                background-color: #fd0000;
+            }
+            
+            .disagree {
+                color: #fd0000;
+            }
+            
+            .foot {
+                height: 60px;
+                border-radius: 20px;
+                border: 1px solid #fc0001;
+                margin-bottom: 20px;
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-box-align: center;
+                -webkit-box-pack: center;
+                -webkit-align-items: center;
+                -webkit-justify-content: center;
+            }
+            .foot span{
+                color: #fc0001;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="main">
+            <ul class="top-title">
+                <li class="title">
+                    <div class="img">
+                        <div class="imgin"><img src="../image/logo.png" />
+                        </div>
+                    </div>
+                    <div class="news">
+                        <p>
+                            <span style="color:red;text-decoration: underline">李一非</span>的假条
+                        </p>
+                        <p style="color:#b2b2b2">
+                            2015-03-12 13:14
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <div class="content">
+                <p class="p-row-1">
+                    <span class="p-row-2">请假会议:</span><span class="p-row-3">批斗大会</span>
+                </p>
+                <p class="p-row-1">
+                    <span class="p-row-2">请假类型:</span><span class="p-row-3">病假</span>
+                </p>
+                <p class="p-row-1">
+                    <span class="p-row-2">请假类型:</span><span class="p-row-3">实现中国梦实现中国梦实现中国梦实现中国梦实现中国梦实现中国梦实现中国梦实现中国梦</span>
+                </p>
+            </div>
+            <div class="foot">
+                <span class="iconfont">&#xe604;</span><span>已处理(拒绝)</span>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {};
+    </script>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui-win.css" />
+        <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+        <style>
+            .aui-content {
+                padding-top: 20px;
+                padding-left: 5px;
+            }
+            
+            .name {
+                color: #ff0000;
+                text-decoration: underline;
+            }
+            
+            .metting {
+                color: #ff0000;
+            }
+            
+            .footline_1 {
+                color: #ffbb71;
+            }
+            
+            .footline_2 {
+                color: #ff0000;
+            }
+            
+            .footline_3 {
+                color: #26AD30;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="aui-content">
+            <ul class="aui-timeline">
+                <li class="aui-time-label">
+                    <span class="aui-bg-info"> 2017.04.04 </span>
+                </li>
+                <li>
+                    <i class="aui-iconfont aui-bg-info aui-icon-home "></i>
+                    <div class="aui-timeline-item" onclick="open_leaveTreatment();">
+                        <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                        <h3 class="aui-timeline-header"><span class="name">张宁</span> 的假条</h3>
+                        <div class="aui-timeline-body">
+                            请假会议：<span class="metting">支部党员大会</span>
+                        </div>
+                        <div class="aui-timeline-footer  footline_1">
+                            <i class="iconfont">&#xe613;</i><span>待审批。</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="aui-iconfont aui-bg-info aui-icon-home"></i>
+                    <div class="aui-timeline-item" onclick="open_leaveTreatment();">
+                        <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                        <h3 class="aui-timeline-header"><span class="name">杨彬</span> 的假条</h3>
+                        <div class="aui-timeline-body">
+                            请假会议：<span class="metting">支部党员大会</span>
+                        </div>
+                        <div class="aui-timeline-footer footline_2">
+                            <i class="iconfont">&#xe604;</i><span>完成审批(拒绝)</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="aui-iconfont aui-icon-home aui-bg-warning"></i>
+                    <div class="aui-timeline-item" onclick="open_leaveTreatment();">
+                        <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                        <h3 class="aui-timeline-header"><span class="name">杨彬</span> 的假条</h3>
+                        <div class="aui-timeline-body">
+                            请假会议：<span class="metting">支部党员大会</span>
+                        </div>
+                        <div class="aui-timeline-footer footline_3">
+                            <i class="iconfont">&#xe605;</i><span>完成审批(同意)</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="aui-content">
+            <ul class="aui-timeline">
+                <li class="aui-time-label">
+                    <span class="aui-bg-info"> 2017.04.05 </span>
+                </li>
+                <li>
+                    <i class="aui-iconfont aui-bg-info aui-icon-home "></i>
+                    <div class="aui-timeline-item" onclick="open_leaveTreatment();">
+                        <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                        <h3 class="aui-timeline-header"><span class="name">张宁</span> 的假条</h3>
+                        <div class="aui-timeline-body">
+                            请假会议：<span class="metting">支部党员大会</span>
+                        </div>
+                        <div class="aui-timeline-footer  footline_1">
+                            <i class="iconfont">&#xe613;</i><span>待审批。</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="aui-iconfont aui-bg-info aui-icon-home"></i>
+                    <div class="aui-timeline-item" onclick="open_leaveTreatment();">
+                        <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                        <h3 class="aui-timeline-header"><span class="name">杨彬</span> 的假条</h3>
+                        <div class="aui-timeline-body">
+                            请假会议：<span class="metting">支部党员大会</span>
+                        </div>
+                        <div class="aui-timeline-footer footline_2">
+                            <i class="iconfont">&#xe604;</i><span>完成审批(拒绝)</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="aui-iconfont aui-icon-home aui-bg-warning"></i>
+                    <div class="aui-timeline-item" onclick="open_leaveTreatment();">
+                        <span class="aui-timeline-time"><i class="aui-iconfont aui-icon-time"></i> 12:05</span>
+                        <h3 class="aui-timeline-header"><span class="name">杨彬</span> 的假条</h3>
+                        <div class="aui-timeline-body">
+                            请假会议：<span class="metting">支部党员大会</span>
+                        </div>
+                        <div class="aui-timeline-footer footline_3">
+                            <i class="iconfont">&#xe605;</i><span>完成审批(同意)</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+
+        };
+
+        function open_leaveTreatment() {
+            api.openWin({
+                name: 'win_leaveTreatment',
+                url: './win_leaveTreatment.html',
+                pageParam: {
+                    name: 'value'
+                }
+            });
+        }
+    </script>
+
+</html>

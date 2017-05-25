@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>青春支部</title>
+        <link rel="stylesheet" type="text/css" href="./css/api.css" />
+        <link rel="stylesheet" type="text/css" href="./fonts/iconfont.css">
+        <link rel="stylesheet" type="text/css" href="./fonts1/iconfont.css">
+        <style>
+            html,
+            body {
+                height: 100%;
+                font-family: '微软雅黑';
+                font-size: 14px;
+            }
+            
+            #wrapper {
+                height: 100%;
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+            }
+            
+            #header {
+                height: 44px;
+                line-height: 44px;
+                background-color: #b41f23;
+                text-align: center;
+                overflow: hidden;
+            }
+            
+            #header .topgroup {
+                position: relative;
+                display: none;
+            }
+            
+            #header .topgroup .search {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                font-size: 20px;
+            }
+            
+            #header .topgroup .smallLogo {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                font-size: 20px;
+            }
+            
+            #header .topgroup .add {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                font-size: 20px;
+            }
+            
+            #header .topgroup .write {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                font-size: 20px;
+            }
+            
+            #header .topgroup .menu {
+                text-align: center;
+                color: #fff;
+                font-size: 16px;
+            }
+            
+            #header .topgroup.active {
+                display: block;
+            }
+            
+            #content {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+            }
+            
+            #footer {
+                height: 44px;
+                line-height: 44px;
+                background-color: #a40000;
+                display: -webkit-box;
+                display: -webkit-flex;
+            }
+            
+            #footer .menu {
+                text-align: center;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                color: #fff;
+                font-size: 14px;
+            }
+            
+            #footer .menu span {
+                font-size: 14px;
+                margin-right: 5px;
+            }
+            
+            #footer .menu.active {
+                background-color: #b41f23;
+            }
+            
+            #footer .menu img {
+                width: 20px;
+                height: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div class="topgroup active">
+                    <div class="menu">支部工作</div>
+                    <div class="smallLogo iconfont">&#xe633;</div>
+                    <div class="search iconfont">&#xe603;</div>
+                </div>
+                <div class="topgroup">
+                    <div class="menu">系统公告</div>
+                </div>
+                <div class="topgroup">
+                    <div class="menu">消息中心</div>
+                    <div class="add iconfont">&#xe60b;</div>
+                </div>
+                <div class="topgroup">
+                    <div class="menu">支部日志</div>
+                    <div class="write iconfont">&#xe615;</div>
+                </div>
+                <div class="topgroup">
+                    <div class="menu ">个人中心</div>
+                </div>
+            </div>
+            <div id="content"></div>
+            <div id="footer">
+                <div class="menu active" onclick="switchFrame(0);" tapmode="">
+                    <span class="iconfont">&#xe60e;</span>推荐
+                </div>
+                <div class="menu" onclick="switchFrame(1);" tapmode="">
+                    <span class="iconfont">&#xe60f;</span>公告
+                </div>
+                <div class="menu" onclick="switchFrame(2);" tapmode="">
+                    <span class="iconfont">&#xe618;</span>消息
+                </div>
+                <div class="menu" onclick="switchFrame(3);" tapmode="">
+                    <span class="iconfont">&#xe61b;</span>日志
+                </div>
+                <div class="menu" onclick="switchFrame(4);" tapmode="">
+                    <span class="iconfont">&#xe612;</span>个人
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="./script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+
+            $api.fixStatusBar($api.dom('header'));
+            api.setStatusBarStyle({
+                style: 'dark',
+                color: '#6ab494'
+            });
+            switchMainFrm(0); //打开主frame
+        };
+        // 点击底部导航替换样式
+        function switchFrame(flag) {
+            var eHeaderList = $api.domAll('#header .topgroup');
+            var eFooterList = $api.domAll('#footer .menu');
+            for (var i = 0; i < eHeaderList.length; i++) {
+                $api.removeCls(eHeaderList[i], 'active');
+                $api.removeCls(eFooterList[i], 'active');
+            }
+            $api.addCls(eHeaderList[flag], 'active'); //控制顶部header替换
+            $api.addCls(eFooterList[flag], 'active'); //控制底部样式变化
+            switchMainFrm(flag); //控制每个主frame的出现
+        }
+
+        function switchMainFrm(index) {
+
+            hiddenOtherFrms(index); //在主frame出现之前先清除其他主frame
+            switch (index) {
+                case 0:
+                    api.openFrame({
+                        name: 'recommend',
+                        url: 'html/frm_recommend.html',
+                        rect: {
+                            x: 0,
+                            y: $api.byId('header').offsetHeight,
+                            w: 'auto',
+                            h: $api.byId('content').offsetHeight
+                        },
+                        pageParam: {
+                            name: 'value'
+                        },
+                        bounces: false
+                            // reload: true
+                            //就因为这个reload让我找了好一会bug，这个frame里面的framegroup要想在被关闭之后重新打开，则必须在打开frame的时候把reload: true 写上让其重新加载才能打开framegroup
+                    });
+
+                    break;
+                case 1:
+                    api.openFrame({
+                        name: 'notice',
+                        url: 'html/frm_notice.html',
+                        rect: {
+                            x: 0,
+                            y: $api.byId('header').offsetHeight,
+                            w: 'auto',
+                            h: $api.byId('content').offsetHeight
+                        },
+                        pageParam: {
+                            name: 'value'
+                        },
+                        bounces: true
+                            // reload: true
+                    });
+                    break;
+                case 2:
+                    api.openFrame({
+                        name: 'news',
+                        url: 'html/frm_news.html',
+                        rect: {
+                            x: 0,
+                            y: $api.byId('header').offsetHeight,
+                            w: 'auto',
+                            h: $api.byId('content').offsetHeight
+                        },
+                        pageParam: {
+                            name: 'value'
+                        },
+                        bounces: true
+                            // reload: true
+                    });
+                    break;
+                case 3:
+                    api.openFrame({
+                        name: 'journal',
+                        url: 'html/frm_journal.html',
+                        rect: {
+                            x: 0,
+                            y: $api.byId('header').offsetHeight,
+                            w: 'auto',
+                            h: $api.byId('content').offsetHeight
+                        },
+                        pageParam: {
+                            name: 'value'
+                        },
+                        bounces: true
+                            // reload: true
+                    });
+                    break;
+                case 4:
+                    api.openFrame({
+                        name: 'my',
+                        url: 'html/frm_my.html',
+                        rect: {
+                            x: 0,
+                            y: $api.byId('header').offsetHeight,
+                            w: 'auto',
+                            h: $api.byId('content').offsetHeight
+                        },
+                        pageParam: {
+                            name: 'value'
+                        },
+                        bounces: true
+                            // reload: true
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function hiddenOtherFrms(goal) {
+            var frmNames = ['recommend', 'notice', 'news', 'journal', 'my'];
+            for (var i = 0; i < frmNames.length; i++) {
+                if (goal != i) {
+                    api.setFrameAttr({
+                        //这里我必须使用隐藏而不是关闭，因为下面代码还要在recommend这个frame中运行script
+                        name: frmNames[i],
+                        hidden: true
+                    });
+
+
+
+                    // api.closeFrame({
+                    //     name: frmNames[i]
+                    // });
+
+                } else {
+                    api.setFrameAttr({
+                        name: frmNames[i],
+
+
+                        hidden: false
+                    });
+                }
+
+
+            }
+
+            if (goal != 0) {
+                // alert('关闭第一个子frame里的framegroup');
+                //关闭第一个子frame里的framegroup
+                var jsfun = 'funcGoto();';
+
+                api.execScript({
+                    frameName: 'recommend',
+                    script: jsfun
+
+                });
+            } else if (goal == 0) {
+                var jsfun_open = 'fun_open();';
+                api.execScript({
+                    frameName: 'recommend',
+                    script: jsfun_open
+
+                });
+            }
+
+
+
+
+        }
+    </script>
+
+</html>

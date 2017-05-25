@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+       
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui-win.css" />
+        <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+        <style>
+            #main {
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .aui-input-addon {
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-align-items: center;
+                -webkit-box-align: center;
+            }
+            
+            .edit_log_row1 {
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-align-items: center;
+                -webkit-box-align: center;
+                /*justify-content: space-between;*/
+            }
+            
+            .row-1 {
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-justify-content: flex-start;
+                -webkit-box-pack: start;
+            }
+            
+            #timer {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+            }
+            
+            #timer p {
+                letter-spacing: 1px;
+                padding-left: 15px;
+            }
+            
+            .row-2 {
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-justify-content: flex-end;
+                -webkit-box-pack: end;
+            }
+            
+            .aui-arrow-right,
+            .choose {
+                font-size: 14px;
+            }
+            
+            .choose {
+                margin-right: 20px;
+                /*6%*/
+                color: #bcbcbc;
+            }
+            
+            .c-red {
+                font-size: 16px;
+                color: red;
+                padding-left: 10px;
+            }
+            
+            .aui-form {
+                margin-bottom: 8px;
+            }
+            
+            .textarea {
+                overflow-y: visible;
+                padding-left: 4%;
+            }
+            
+            .button {
+                background-color: #b31f23;
+                width: 70%;
+                margin: 30px auto;
+                border-radius: 30px;
+                color: #FFFFFF;
+                font-weight: bold;
+            }
+            
+            textarea {
+                font-size: 14px;
+            }
+            
+            .mainMaskActive {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="main">
+            <div id="mask"></div>
+            <div class="aui-form">
+                <div class="aui-input-row">
+                    <label class="aui-input-addon"> <span class="c-red">* </span>会议主题： </label>
+                    <input type="text" class="aui-input" placeholder="请输入会议主题">
+                </div>
+            </div>
+            <ul class="aui-list-view" style="width: 100%;margin-bottom: 8px" onclick="openTimePicker();">
+                <li class="aui-list-view-cell edit_log_row1" data-win="list_arrow">
+                    <div class="aui-arrow-right row-1">
+                        <span class="c-red" style="padding-left: 0">* </span>开始时间：
+                    </div>
+                    <div id="timer">
+                        <p><span>1</span>月<span>1</span>日<span>00</span>:<span>00</span></p>
+                    </div>
+                    <div class="choose row-2">
+                        请选择
+                    </div>
+                </li>
+            </ul>
+            <div class="aui-form">
+                <div class="aui-input-row">
+                    <label class="aui-input-addon"> <span class="c-red">* </span>会议地点： </label>
+                    <input type="text" class="aui-input" placeholder="请输入会议地点">
+                </div>
+            </div>
+            <div class="aui-form">
+                <div class="aui-input-row">
+                    <label class="aui-input-addon"> <span class="c-red">* </span>会议内容： </label>
+                    <textarea class="textarea" placeholder="请输入会议内容" rows="8"></textarea>
+                </div>
+            </div>
+            <div class="aui-form">
+                <div class="aui-input-row">
+                    <label class="aui-input-addon" style="padding-left: 23px;">会议要求： </label>
+                    <textarea class="textarea" placeholder="请输入会议要求" rows="8"></textarea>
+                </div>
+            </div>
+            <div class="aui-btn aui-btn-block button">
+                发起会议
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+
+        };
+
+    </script>
+
+</html>

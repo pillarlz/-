@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>recommend</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../fonts1/iconfont.css" />
+		<style>
+			html, body {
+				height: 100%;
+				font-family: '微软雅黑';
+				font-size: 14px;
+			}
+			.wrapper {
+				height: 100%;
+			}
+			.content {
+				display: -webkit-box;
+				display: -webkit-flex;
+				padding: 10px 15px;
+				border-bottom: 1px solid #ccc;
+			}
+			.imgWrapper {
+				width: 33.3%;
+			}
+			.imgWrapper .img {
+				width: 100%;
+				padding-top: 70%;
+				position: relative;
+			}
+			.imgWrapper .img img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+			}
+			.text {
+				margin-left: 5px;
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				display: -webkit-box;
+				display: -webkit-flex;
+				-webkit-flex-flow: column;
+				-webkit-box-orient: vertical;
+			}
+			.text .textContent {
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				margin-top: 5px;
+			}
+			.text .textContent h1 {
+				display: -webkit-box;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				font-size: 16px;
+			}
+			.text .textBottom {
+				padding-left: 5px;
+			}
+			.text .textBottom li {
+			}
+			.text .textBottom li span {
+				color: #888;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper" id="article_list">
+			<!-- <div class="content">
+			<div class="imgWrapper">
+			<div class="img">
+			<img src="../image/scenery.png">
+			</div>
+			</div>
+			<div class="text">
+			<div class="textContent">
+			<h1>这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊</h1>
+			</div>
+			<div class="textBottom">
+			<ul>
+			<li style="margin-right: 10px;float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe674;</span><span>999</span>
+			</li>
+			<li style="float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe60d;</span><span>999</span>
+			</li>
+			<li style="float: right;">
+			<span style="margin-right: 5px">2017-3-29</span><span>10:00</span>
+			</li>
+			<div class="clearfix"></div>
+			</ul>
+			</div>
+			</div>
+			</div>
+			<div class="content">
+			<div class="imgWrapper">
+			<div class="img">
+			<img src="../image/scenery.png">
+			</div>
+			</div>
+			<div class="text">
+			<div class="textContent">
+			<h1>这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊</h1>
+			</div>
+			<div class="textBottom">
+			<ul>
+			<li style="margin-right: 10px;float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe674;</span><span>999</span>
+			</li>
+			<li style="float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe60d;</span><span>999</span>
+			</li>
+			<li style="float: right;">
+			<span style="margin-right: 5px">2017-3-29</span><span>10:00</span>
+			</li>
+			<div class="clearfix"></div>
+			</ul>
+			</div>
+			</div>
+			</div>
+			<div class="content">
+			<div class="imgWrapper">
+			<div class="img">
+			<img src="../image/scenery.png">
+			</div>
+			</div>
+			<div class="text">
+			<div class="textContent">
+			<h1>这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊</h1>
+			</div>
+			<div class="textBottom">
+			<ul>
+			<li style="margin-right: 10px;float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe674;</span><span>999</span>
+			</li>
+			<li style="float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe60d;</span><span>999</span>
+			</li>
+			<li style="float: right;">
+			<span style="margin-right: 5px">2017-3-29</span><span>10:00</span>
+			</li>
+			<div class="clearfix"></div>
+			</ul>
+			</div>
+			</div>
+			</div>
+			<div class="content">
+			<div class="imgWrapper">
+			<div class="img">
+			<img src="../image/scenery.png">
+			</div>
+			</div>
+			<div class="text">
+			<div class="textContent">
+			<h1>这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊</h1>
+			</div>
+			<div class="textBottom">
+			<ul>
+			<li style="margin-right: 10px;float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe674;</span><span>999</span>
+			</li>
+			<li style="float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe60d;</span><span>999</span>
+			</li>
+			<li style="float: right;">
+			<span style="margin-right: 5px">2017-3-29</span><span>10:00</span>
+			</li>
+			<div class="clearfix"></div>
+			</ul>
+			</div>
+			</div>
+			</div>
+			<div class="content">
+			<div class="imgWrapper">
+			<div class="img">
+			<img src="../image/scenery.png">
+			</div>
+			</div>
+			<div class="text">
+			<div class="textContent">
+			<h1>这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊</h1>
+			</div>
+			<div class="textBottom">
+			<ul>
+			<li style="margin-right: 10px;float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe674;</span><span>999</span>
+			</li>
+			<li style="float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe60d;</span><span>999</span>
+			</li>
+			<li style="float: right;">
+			<span style="margin-right: 5px">2017-3-29</span><span>10:00</span>
+			</li>
+			<div class="clearfix"></div>
+			</ul>
+			</div>
+			</div>
+			</div>
+			<div class="content">
+			<div class="imgWrapper">
+			<div class="img">
+			<img src="../image/scenery.png">
+			</div>
+			</div>
+			<div class="text">
+			<div class="textContent">
+			<h1>这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊这是标题啊</h1>
+			</div>
+			<div class="textBottom">
+			<ul>
+			<li style="margin-right: 10px;float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe674;</span><span>999</span>
+			</li>
+			<li style="float: left;">
+			<span class="iconfont" style="margin-right: 3px;">&#xe60d;</span><span>999</span>
+			</li>
+			<li style="float: right;">
+			<span style="margin-right: 5px">2017-3-29</span><span>10:00</span>
+			</li>
+			<div class="clearfix"></div>
+			</ul>
+			</div>
+			</div>
+			</div>-->
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript">
+		var typeCode;
+		/*文章类型*/
+		var article_list;
+		var offset = 0;
+		var html = '';
+		apiready = function() {
+			typeCode = api.pageParam.typeCode;
+			article_list = $api.byId('article_list');
+			init(typeCode);
+			fetchArticles(0, typeCode, function(ret, err) {
+				for (var i = 0; i < ret.length; i++) {
+					var newDate = new Date(ret[i].createdAt);
+					var showTime = newDate.toLocaleString();
+					var tmp = '<div class="content" onclick="openContentWin(' + ret[i].id + ')">' + '<div class="imgWrapper">' + '<div class="img">' + '<img src="' + ret[i].imageUrl + '">' + '</div>' + '</div>' + '<div class="text">' + '<div class="textContent">' + '<h1>' + ret[i].title + '</h1>' + '</div>' + '<div class="textBottom">' + '<ul>' + '<li style="margin-right: 10px;float: left;">' + '<span class="iconfont" style="margin-right: 3px;">&#xe674;</span><span>' + ret[i].fancy + '</span>' + '</li>' + '<li style="float: left;">' + '<span class="iconfont" style="margin-right: 3px;">&#xe60d;</span><span>' + ret[i].vedioUrl + '</span>' + '</li>' + '<li style="float: right;">' + '<span style="margin-right: 5px">' + showTime + '</span>' + '</li>' + '<div class="clearfix"></div>' + '</ul>' + '</div>' + '</div>' + '</div>';
+					html += tmp;
+				}
+				$api.html(article_list, html);
+			});
+		};
+		/*apiready结束*/
+		/*ajax获取数据*/
+		function fetchArticles(offset, typeCode, callback) {
+			api.ajax({
+				url : 'http://47.92.28.251:1024/article/' + offset + '/' + typeCode + '/list',
+				method : 'get',
+			}, function(ret, err) {
+				callback(ret, err);
+			});
+		}
+
+		/*设置时间显示格式*/
+		Date.prototype.toLocaleString = function() {
+			return this.getFullYear() + '-' + (this.getMonth() + 1) + ':' + this.getMinutes();
+		};
+		function openContentWin(recommendContentId) {
+			api.openWin({
+				name : 'win_recommendContent',
+				url : 'win_recommendContent.html',
+				pageParam : {
+					recommendContentId : recommendContentId
+				}
+			});
+		}
+
+		function init(typecode) {
+			// setRefreshHeaderInfo显示顶部下拉刷新组件
+			//一次加载10个，刷新一次offset+10
+			api.setRefreshHeaderInfo({
+				visible : true,
+				loadingImg : 'widget://image/refresh.png',
+				bgColor : '#ccc',
+				textColor : '#fff',
+				textDown : '下拉刷新...',
+				textUp : '松开刷新...',
+				showTime : true
+			}, function(ret, err) {
+				fetchArticles(0, typeCode, function(ret,err) {
+					if (ret) {
+						if (ret) {
+						for (var i = 0; i < ret.length; i++) {
+							var newDate = new Date(ret[i].createdAt);
+							var showTime = newDate.toLocaleString();
+							var tmp = '<div class="content" onclick="openContentWin(' + ret[i].id + ')">' + '<div class="imgWrapper">' + '<div class="img">' + '<img src="' + ret[i].imageUrl + '">' + '</div>' + '</div>' + '<div class="text">' + '<div class="textContent">' + '<h1>' + ret[i].title + '</h1>' + '</div>' + '<div class="textBottom">' + '<ul>' + '<li style="margin-right: 10px;float: left;">' + '<span class="iconfont" style="margin-right: 3px;">&#xe674;</span><span>' + ret[i].fancy + '</span>' + '</li>' + '<li style="float: left;">' + '<span class="iconfont" style="margin-right: 3px;">&#xe60d;</span><span>' + ret[i].vedioUrl + '</span>' + '</li>' + '<li style="float: right;">' + '<span style="margin-right: 5px">' + showTime + '</span>' + '</li>' + '<div class="clearfix"></div>' + '</ul>' + '</div>' + '</div>' + '</div>';
+							html += tmp;
+						}
+						$api.html(article_list, html);
+						api.toast({
+                                msg: '刷新成功！'
+                            });
+						}
+						offset = 10;
+					} else {
+						api.toast({
+                                msg: '刷新失败！'
+                            });
+					}
+					
+                    api.refreshHeaderLoadDone();
+				});
+			});
+			/*上拉加载*/
+			/*当事件为scrolltobottom时，设置距离底部多少距离时触发事件*/
+			api.addEventListener({
+				name : 'scrolltobottom',
+				extra : {
+					threshold : 0
+				}
+			}, function(ret, err) {
+                api.showProgress({
+                    style: 'default',
+                    animationType: 'fade',
+                    title: '努力加载中...',
+                    text: '先喝杯茶...',
+                    modal: false
+                });    
+				fetchArticles(offset, typeCode, function(ret, err) {
+					if (ret) {
+						if (ret.length < 10) {
+							alert("到达底部！");
+							return;
+						}
+                        
+						for (var i = 0; i < ret.length; i++) {
+							var newDate = new Date(ret[i].createdAt);
+							var showTime = newDate.toLocaleString();
+							var tmp = '<div class="content" onclick="openContentWin(' + ret[i].id + ')">' + '<div class="imgWrapper">' + '<div class="img">' + '<img src="' + ret[i].imageUrl + '">' + '</div>' + '</div>' + '<div class="text">' + '<div class="textContent">' + '<h1>' + ret[i].title + '</h1>' + '</div>' + '<div class="textBottom">' + '<ul>' + '<li style="margin-right: 10px;float: left;">' + '<span class="iconfont" style="margin-right: 3px;">&#xe674;</span><span>' + ret[i].fancy + '</span>' + '</li>' + '<li style="float: left;">' + '<span class="iconfont" style="margin-right: 3px;">&#xe60d;</span><span>' + ret[i].vedioUrl + '</span>' + '</li>' + '<li style="float: right;">' + '<span style="margin-right: 5px">' + showTime + '</span>' + '</li>' + '<div class="clearfix"></div>' + '</ul>' + '</div>' + '</div>' + '</div>';
+							html += tmp;
+						}
+						$api.html(article_list, $api.html(article_list) + html);
+						api.toast({
+                                msg: '加载成功！'
+                            });
+						
+						offset += 10;
+					} else {
+						api.toast({
+                                msg: '加载失败！'
+                            });
+					}
+                    api.hideProgress();
+				});
+			});
+		}
+	</script>
+</html>

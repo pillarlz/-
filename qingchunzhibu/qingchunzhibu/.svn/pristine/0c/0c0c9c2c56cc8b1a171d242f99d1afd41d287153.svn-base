@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>Hello APP</title>
+        <link rel="stylesheet" type="text/css" href="./css/api.css" />
+        <style>
+            html,
+            body {
+                height: 100%;
+                font-size: 14px;
+                font-family: '微软雅黑';
+            }
+            
+            #wrapper {
+                height: 100%;
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+            }
+            
+            #header {
+                height: 44px;
+                line-height: 44px;
+                background-color: #d33d3c;
+                text-align: center;
+                overflow: hidden;
+            }
+            
+            #header .topgroup {
+                display: none;
+            }
+            
+            #header .topgroup .menu {
+                text-align: center;
+                color: #fff;
+            }
+            
+            #header .topgroup.active {
+                display: block;
+            }
+            
+            #content {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+            }
+            
+            #footer {
+                height: 44px;
+                line-height: 44px;
+                background-color: #d33d3c;
+                display: -webkit-box;
+                display: -webkit-flex;
+            }
+            
+            #footer .menu {
+                text-align: center;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                color: #fff;
+            }
+            
+            #footer .menu.active {
+                background-color: #f00;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div class="topgroup active">
+                    <div class="menu">支部工作</div>
+                </div>
+                <div class="topgroup">
+                    <div class="menu">系统公告</div>
+                </div>
+                <div class="topgroup">
+                    <div class="menu">消息中心</div>
+                </div>
+                <div class="topgroup">
+                    <div class="menu">支部日志</div>
+                </div>
+                <div class="topgroup">
+                    <div class="menu ">个人中心</div>
+                </div>
+            </div>
+            <div id="content"></div>
+            <div id="footer">
+                <div class="menu active" onclick="switchFrame(0);" tapmode="">推荐</div>
+                <div class="menu" onclick="switchFrame(1);" tapmode="">公告</div>
+                <div class="menu" onclick="switchFrame(2);" tapmode="">消息</div>
+                <div class="menu" onclick="switchFrame(3);" tapmode="">日志</div>
+                <div class="menu" onclick="switchFrame(4);" tapmode="">个人</div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="./script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+
+            $api.fixStatusBar($api.dom('header'));
+            api.setStatusBarStyle({
+                style: 'dark',
+                color: '#6ab494'
+            });
+            switchMainFrm(0); //打开主frame
+        };
+        // 点击底部导航替换样式
+        function switchFrame(flag) {
+            var eHeaderList = $api.domAll('#header .topgroup');
+            var eFooterList = $api.domAll('#footer .menu');
+            for (var i = 0; i < eHeaderList.length; i++) {
+                $api.removeCls(eHeaderList[i], 'active');
+                $api.removeCls(eFooterList[i], 'active');
+            }
+            $api.addCls(eHeaderList[flag], 'active'); //控制顶部header替换
+            $api.addCls(eFooterList[flag], 'active'); //控制底部样式变化
+            switchMainFrm(flag); //控制每个主frame的出现
+        }
+
+        function switchMainFrm(index) {
+
+            hiddenOtherFrms(index); //在主frame出现之前先清除其他主frame
+            switch (index) {
+                case 0:
+                    api.openFrame({
+                        name: 'recommend',
+                        url: 'html/frm_recommend.html',
+                        rect: {
+                            x: 0,
+                            y: $api.byId('header').offsetHeight,
+                            w: 'auto',
+                            h: $api.byId('content').offsetHeight
+                        },
+                        pageParam: {
+                            name: 'value'
+                        },
+                        bounces: true
+                    });
+                    break;
+                case 1:
+                    api.openFrame({
+                        name: 'notice',
+                        url: 'html/frm_notice.html',
+                        rect: {
+                            x: 0,
+                            y: $api.byId('header').offsetHeight,
+                            w: 'auto',
+                            h: $api.byId('content').offsetHeight
+                        },
+                        pageParam: {
+                            name: 'value'
+                        },
+                        bounces: true,
+                        // reload: true
+                    });
+                    break;
+                case 2:
+                    api.openFrame({
+                        name: 'news',
+                        url: 'html/frm_news.html',
+                        rect: {
+                            x: 0,
+                            y: $api.byId('header').offsetHeight,
+                            w: 'auto',
+                            h: $api.byId('content').offsetHeight
+                        },
+                        pageParam: {
+                            name: 'value'
+                        },
+                        bounces: true,
+                        reload: true
+                    });
+                    break;
+                case 3:
+                    api.openFrame({
+                        name: 'journal',
+                        url: 'html/frm_journal.html',
+                        rect: {
+                            x: 0,
+                            y: $api.byId('header').offsetHeight,
+                            w: 'auto',
+                            h: $api.byId('content').offsetHeight
+                        },
+                        pageParam: {
+                            name: 'value'
+                        },
+                        bounces: true
+                    });
+                    break;
+                case 4:
+                    api.openFrame({
+                        name: 'my',
+                        url: 'html/frm_my.html',
+                        rect: {
+                            x: 0,
+                            y: $api.byId('header').offsetHeight,
+                            w: 'auto',
+                            h: $api.byId('content').offsetHeight
+                        },
+                        pageParam: {
+                            name: 'value'
+                        },
+                        bounces: true
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function hiddenOtherFrms(goal) {
+            var frmNames = ['recommend', 'notice', 'news', 'journal', 'my'];
+            for (var i = 0; i < frmNames.length; i++) {
+                if (goal != i) {
+                    api.setFrameAttr({
+                        name: frmNames[i],
+                        hidden: true
+                    });
+                }
+
+            }
+
+
+        }
+    </script>
+
+</html>

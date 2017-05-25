@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui-win.css" />
+        <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+        <style>
+            .main {
+                width: 90%;
+                margin: 0 auto;
+            }
+            
+            .title {
+                padding: 15px 0 10px;
+            }
+            
+            .title h1 {
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            
+            .content .content_text {
+                font-size: 16px;
+                color: #000;
+                margin-bottom: 20px;
+            }
+            
+            .describle {
+                font-size: 12px;
+                color: #bbb;
+            }
+            
+            .describle span {
+                font-size: 12px;
+            }
+            
+            .content {
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="title">
+                <h1>这个标题真的是一个很长很长的标题，需要换行才能放得下,啊啊啊啊啊凑点字数吧这个标题真的是一个很长很长的标题</h1>
+            </div>
+            <div class="describle">
+                <div style="float: left;"><span class="iconfont">&#xe60c;</span>中国大学生在线党支部</div>
+                <div style="float: right;"><span style="margin-right: 5px;">2016-10-1</span><span>18:29</span></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="content">
+                <p class="content_text">
+                    文字-文字是人类用来交流的符号系统,是纪录思想和事件的书写形式。一般认为,文字是一个民族进入文明社会的重要标志。马克思主义的观点则认为文字是在阶级社会产生以后。
+                </p>
+                <p class="content_text">
+                    文字-文字是人类用来交流的符号系统,是纪录思想和事件的书写形式。一般认为,文字是一个民族进入文明社会的重要标志。马克思主义的观点则认为文字是在阶级社会产生以后。
+                </p>
+                <p class="content_text">
+                    文字-文字是人类用来交流的符号系统,是纪录思想和事件的书写形式。一般认为,文字是一个民族进入文明社会的重要标志。马克思主义的观点则认为文字是在阶级社会产生以后。
+                </p>
+                <p class="content_text">
+                    文字-文字是人类用来交流的符号系统,是纪录思想和事件的书写形式。一般认为,文字是一个民族进入文明社会的重要标志。马克思主义的观点则认为文字是在阶级社会产生以后。
+                </p>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+           
+        };
+    </script>
+
+</html>

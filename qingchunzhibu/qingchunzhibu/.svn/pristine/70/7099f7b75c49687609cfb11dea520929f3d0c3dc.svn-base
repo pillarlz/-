@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui-win.css" />
+        <style>
+            /*.setting {
+             background-color: #b31f23;
+             margin-bottom: 20px;
+             }*/
+            
+            #main {
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                width: 100%;
+                height: 100%;
+                background-color: #ededed;
+                padding-top: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="main">
+            <ul class="aui-list-view">
+                <li class="aui-list-view-cell" data-win="list_arrow" onclick="openNewMessage();;" tapmode="">
+                    <div class="aui-arrow-right">
+                        新消息提醒
+                    </div>
+                </li>
+                <li class="aui-list-view-cell" data-win="list_arrow" onclick="openPassWord();" tapmode="">
+                    <div class="aui-arrow-right">
+                        修改密码
+                    </div>
+                </li>
+                <li class="aui-list-view-cell" data-win="list_thumb">
+                    <div class="aui-arrow-right">
+                        通用
+                    </div>
+                </li>
+                <li class="aui-list-view-cell" data-win="list_arrow">
+                    <div class="aui-arrow-right">
+                        账号与安全
+                    </div>
+                </li>
+            </ul>
+            <ul class="aui-list-view">
+                <li class="aui-list-view-cell version" data-win="list_arrow">
+                    <div class="aui-arrow-right" style="float: left;">
+                        关于支部小助手
+                    </div>
+                    <div class="version" style="margin-right: 20px; float: right;">
+                        v1.0
+                    </div>
+                </li>
+            </ul>
+            <ul class="aui-list-view">
+                <li class="aui-list-view-cell" style="text-align: center;color: #e80404;font-weight: 500" onclick="" tapmode="">
+                    退出登录
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+
+        };
+
+        function openNewMessage() {
+            api.openWin({
+                name: 'win_newMessage',
+                url: './win_newMessage.html',
+                pageParam: {
+                    name: 'test'
+                }
+            });
+        }
+
+        function openPassWord() {
+            api.openWin({
+                name: 'win_passWord',
+                url: './win_passWord.html',
+                pageParam: {
+                    name: 'test'
+                }
+            });
+        }
+    </script>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui-win.css" />
+        <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css">
+        <link rel="stylesheet" type="text/css" href="../fonts1/iconfont.css">
+        <style>
+            #main {
+                width: 100%;
+                height: 100%;
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+            }
+            
+            #con {
+                height: 30px;
+                line-height: 30px;
+            }
+            
+            .list {
+                width: 100%;
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+            }
+            
+            .aui-img-body span.iconfont {
+                color: #55a2d4;
+            }
+            
+            .aui-img-body p span {
+                width: 50% !important;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="con" style="margin: 2%">
+                成员(<span>30</span>人)
+            </div>
+            <div class="aui-content list">
+                <ul class="aui-user-view">
+                    <li class="aui-user-view-cell aui-img" onclick="openManageMyInformation();">
+                        <img class="aui-img-object aui-pull-left" src="../image/shuijiao.jpg">
+                        <div class="aui-img-body">
+                            <span>段启岩<em style="padding:3px 5px;background: #1eb9f2;color: #FFFFFF;border-radius: 4px">书记</em></span>
+                            <p class="aui-ellipsis-1" tapmode="">
+                                <span>123</span><span class="iconfont">&#xe601;</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="aui-user-view-cell aui-img" onclick="openManageMyInformation();">
+                        <img class="aui-img-object aui-pull-left" src="../image/shuijiao.jpg">
+                        <div class="aui-img-body">
+                            <span>刘英帅<em style="padding:3px 5px;background: #fec72e;color: #FFFFFF;border-radius: 4px">支委</em></span>
+                            <p class="aui-ellipsis-1" tapmode="">
+                                <span>1234</span><span class="iconfont">&#xe601;</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="aui-user-view-cell aui-img" onclick="openManageMyInformation();">
+                        <img class="aui-img-object aui-pull-left" src="../image/shuijiao.jpg">
+                        <div class="aui-img-body">
+                            <span>图图<em style="padding:3px 5px;background: #64d9a3;color: #FFFFFF;border-radius: 4px">组长</em></span></span>
+                            <p class="aui-ellipsis-1" tapmode="">
+                                <span>12345</span><span class="iconfont">&#xe601;</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="aui-user-view-cell aui-img" onclick="openManageMyInformation();">
+                        <img class="aui-img-object aui-pull-left" src="../image/shuijiao.jpg">
+                        <div class="aui-img-body aui-arrow-left">
+                            <span>si茂文</span>
+                            <p class="aui-ellipsis-1" tapmode="">
+                                <span>123456</span><span class="iconfont">&#xe601;</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="aui-user-view-cell aui-img" onclick="openManageMyInformation();">
+                        <img class="aui-img-object aui-pull-left" src="../image/shuijiao.jpg">
+                        <div class="aui-img-body">
+                            <span>刘yin新</span>
+                            <p class="aui-ellipsis-1" tapmode="">
+                                <span>1234567</span><span class="iconfont">&#xe601;</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="aui-user-view-cell aui-img" onclick="openManageMyInformation();">
+                        <img class="aui-img-object aui-pull-left" src="../image/shuijiao.jpg">
+                        <div class="aui-img-body">
+                            <span>王建宏</span>
+                            <p class="aui-ellipsis-1" tapmode="">
+                                <span>12345678</span><span class="iconfont">&#xe601;</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="aui-user-view-cell aui-img" onclick="openManageMyInformation();">
+                        <img class="aui-img-object aui-pull-left" src="../image/shuijiao.jpg">
+                        <div class="aui-img-body">
+                            <span>梁柱小学弟</span>
+                            <p class="aui-ellipsis-1" tapmode="">
+                                <span>123456789</span><span class="iconfont">&#xe601;</span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+
+        };
+
+        function openManageMyInformation() {
+            api.openWin({
+                name: 'ManageMyInformation',
+                url: './win_ManageMyInformation.html',
+                pageParam: {
+                    name: 'value'
+                }
+            });
+
+        }
+    </script>
+
+</html>

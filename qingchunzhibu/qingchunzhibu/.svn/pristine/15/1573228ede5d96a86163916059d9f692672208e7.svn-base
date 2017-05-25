@@ -1,0 +1,436 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>青春支部</title>
+        <link rel="stylesheet" type="text/css" href="./css/api.css" />
+        <link rel="stylesheet" type="text/css" href="./fonts/iconfont.css">
+        <link rel="stylesheet" type="text/css" href="./fonts1/iconfont.css">
+        <style>
+            html,
+            body {
+                height: 100%;
+                font-family: '微软雅黑';
+                font-size: 14px;
+            }
+            
+            #wrapper {
+                /*这里大盒子设置height为100%是必须的，如果没有，header，content无法构成弹性盒子布局*/
+                height: 100%;
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+            }
+            
+            #header {
+                text-align: center;
+            }
+            
+            #header .topgroup {
+                position: relative;
+                display: none;
+            }
+            
+            #header .topgroup .search {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                font-size: 20px;
+            }
+            
+            #header .topgroup .smallLogo {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                font-size: 20px;
+            }
+            
+            #header .topgroup .add {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                font-size: 20px;
+            }
+            
+            #header .topgroup .write {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                font-size: 20px;
+            }
+            
+            #header .topgroup .Menu {
+                text-align: center;
+                color: #fff;
+                font-size: 16px;
+                height: 44px;
+                line-height: 44px;
+                background-color: #b41f23;
+            }
+            
+            #header .topgroup.active {
+                display: block;
+            }
+            
+            #content {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+            }
+            
+            #footer {
+                height: 44px;
+                line-height: 44px;
+                background-color: #a40000;
+                display: -webkit-box;
+                display: -webkit-flex;
+            }
+            
+            #footer .menu {
+                text-align: center;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                color: #fff;
+                font-size: 14px;
+            }
+            
+            #footer .menu span {
+                font-size: 14px;
+                margin-right: 5px;
+            }
+            
+            #footer .menu.active {
+                background-color: #b41f23;
+            }
+            
+            #footer .menu img {
+                width: 20px;
+                height: 20px;
+            }
+            
+            #nav {
+                height: 35px;
+                line-height: 35px;
+                overflow: hidden;
+                position: relative;
+                background-color: #f4f6f7;
+                border-bottom: 1px solid #ccc;
+            }
+            
+            .con {
+                /*保证一行显示li*/
+                white-space: nowrap;
+                /*没有relative和absolute配合，不能实现滑动li*/
+                position: absolute;
+            }
+            
+            #nav .menu {
+                display: inline-block;
+                height: 35px;
+                line-height: 35px;
+                padding: 0 15px;
+                text-align: center;
+            }
+            
+            #nav .menu.active {
+                color: #e95757;
+                /*  border-bottom: 2px solid green;
+                transition: all .5s ease-in-out;
+                -webkit-transition: all .5s ease-in-out;*/
+            }
+            
+            .run-line {
+                height: 2px;
+                width: 48px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: #b41f23;
+                -webkit-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div class="topgroup active">
+                    <div class="Menu">支部工作</div>
+                    <div class="smallLogo iconfont">&#xe633;</div>
+                    <div class="search iconfont">&#xe603;</div>
+                    <div id="nav">
+                        <div class="con">
+                            <ul>
+                                <li class="menu active" onclick="switchNavFrameGroup(0);" tapmode="">首页</li>
+                                <li class="menu" onclick="switchNavFrameGroup(1);" tapmode="">工作案例</li>
+                                <li class="menu" onclick="switchNavFrameGroup(2);" tapmode="">微党课</li>
+                                <li class="menu" onclick="switchNavFrameGroup(3);" tapmode="">教师支部推荐展示</li>
+                                <li class="menu" onclick="switchNavFrameGroup(4);" tapmode="">学生支部推荐展示</li>
+                            </ul>
+                            <div class="run-line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="topgroup">
+                    <div class="Menu">系统公告</div>
+                </div>
+                <div class="topgroup">
+                    <div class="Menu">消息中心</div>
+                    <div class="add iconfont">&#xe60b;</div>
+                </div>
+                <div class="topgroup">
+                    <div class="Menu">支部日志</div>
+                    <div class="write iconfont">&#xe615;</div>
+                </div>
+                <div class="topgroup">
+                    <div class="Menu ">个人中心</div>
+                </div>
+            </div>
+            <div id="content"></div>
+            <div id="footer">
+                <div class="menu active" onclick="switchFrame(0);" tapmode="">
+                    <span class="iconfont">&#xe60e;</span>推荐
+                </div>
+                <div class="menu" onclick="switchFrame(1);" tapmode="">
+                    <span class="iconfont">&#xe60f;</span>公告
+                </div>
+                <div class="menu" onclick="switchFrame(2);" tapmode="">
+                    <span class="iconfont">&#xe618;</span>消息
+                </div>
+                <div class="menu" onclick="switchFrame(3);" tapmode="">
+                    <span class="iconfont">&#xe61b;</span>日志
+                </div>
+                <div class="menu" onclick="switchFrame(4);" tapmode="">
+                    <span class="iconfont">&#xe612;</span>个人
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="./script/api.js"></script>
+    <script type="text/javascript" src="./script/iScroll-lite.js"></script>
+    <script type="text/javascript">
+        var myScroll; //定义滚动对象
+        apiready = function() {
+
+            $api.fixStatusBar($api.dom('header'));
+            api.setStatusBarStyle({
+                style: 'dark',
+                color: '#6ab494'
+            });
+
+            loaded(); //滚动函数
+
+
+            switchMainFrm(0); //打开主frame
+        };
+
+        function loaded() {
+            myScroll = new IScroll('#nav', {
+                scrollX: true,
+                scrollY: false,
+                tap: true
+            });
+
+        }
+
+        function openFrameGro() {
+            api.openFrameGroup({
+                name: 'recommend_group',
+
+                rect: {
+                    x: 0, //左上角x坐标
+                    y: $api.byId('header').offsetHeight, //左上角y坐标
+
+
+
+                    w: 'auto', //宽度，若传'auto'，页面从x位置开始自动充满父页面宽度
+                    h: $api.byId('content').offsetHeight,
+                    //宽度，若传'auto'，页面从x位置开始自动充满父页面宽度
+
+
+
+
+                },
+                scrollEnabled: true,
+                preload: 5,
+
+                frames: [{
+                    name: 'recommend_frmgro1',
+                    url: './frm_recommend/recommend_frmgro1.html',
+                    bounces: true,
+
+
+                    pageParam: {
+                        name: 'value'
+                    }
+                }, {
+                    name: 'recommend_frmgro2',
+                    url: './frm_recommend/recommend_frmgro2.html',
+                    bounces: true,
+
+                    pageParam: {
+                        name: 'value'
+                    }
+                }, {
+                    name: 'recommend_frmgro3',
+                    url: './frm_recommend/recommend_frmgro3.html',
+                    bounces: true,
+
+                    pageParam: {
+                        name: 'value'
+                    }
+                }, {
+                    name: 'recommend_frmgro4',
+                    url: './frm_recommend/recommend_frmgro4.html',
+                    bounces: true,
+
+                    pageParam: {
+                        name: 'value'
+                    }
+                }, {
+                    name: 'recommend_frmgro5',
+                    url: './frm_recommend/recommend_frmgro5.html',
+                    bounces: true,
+
+                    pageParam: {
+                        name: 'value'
+                    }
+                }]
+            }, function(ret, err) {
+                if (ret) {
+
+                    for (var i = 0; i < 5; i++) {
+                        var recommendFrmGroList = $api.domAll('li');
+                        if (ret.index == i) {
+                            $api.addCls(recommendFrmGroList[i], 'active');
+                        } else {
+                            $api.removeCls(recommendFrmGroList[i], 'active');
+                        }
+                    }
+                    var eRun = document.querySelector('.run-line');
+                    eRun.style.cssText = 'left:' + recommendFrmGroList[ret.index].offsetLeft + 'px; width:' + recommendFrmGroList[ret.index].offsetWidth + 'px;'
+
+
+                    myScroll.scrollToElement(recommendFrmGroList[ret.index], 300, true)
+                        //保证在打开framegroup并且进行scrollEnabled操作的时候，#nav .menu.active也跟着滑动
+
+                } else {
+                    alert(JSON.stringify(err));
+                }
+
+            });
+
+        }
+        //点击framegroup导航改变导航样式以及打开子framegroup
+        function switchNavFrameGroup(index) {
+
+            var recommendFrmGroList = $api.domAll('li');
+            for (var i = 0; i < recommendFrmGroList.length; i++) {
+                if (index == i) {
+                    $api.addCls(recommendFrmGroList[i], 'active');
+                } else {
+                    $api.removeCls(recommendFrmGroList[i], 'active');
+                }
+            }
+            api.setFrameGroupIndex({
+                name: 'recommend_group',
+                index: index,
+                scroll: true
+            });
+
+            var eRun = document.querySelector('.run-line');
+            eRun.style.cssText = 'left:' + recommendFrmGroList[index].offsetLeft + 'px; width:' + recommendFrmGroList[index].offsetWidth + 'px;'
+            myScroll.scrollToElement(recommendFrmGroList[index], 300, true)
+                //保证在点击li.active的时候，li.active跟着滑动
+        }
+
+        // 点击底部导航替换样式
+        function switchFrame(flag) {
+            var eHeaderList = $api.domAll('#header .topgroup');
+            var eFooterList = $api.domAll('#footer .menu');
+            for (var i = 0; i < eHeaderList.length; i++) {
+                $api.removeCls(eHeaderList[i], 'active');
+                $api.removeCls(eFooterList[i], 'active');
+            }
+            $api.addCls(eHeaderList[flag], 'active'); //控制顶部header替换
+            $api.addCls(eFooterList[flag], 'active'); //控制底部样式变化
+            switchMainFrm(flag); //控制每个主frame的出现
+        }
+
+        function switchMainFrm(index) {
+            var frmNames = ['recommend_group', 'notice', 'news', 'journal', 'my'];
+            for (var i = 0; i < frmNames.length; i++) {
+                if (index != i) { //筛选出是否为用户所选，此处不是，所以要隐藏
+                    if (i == 0) { //继续筛选是否为第一个
+                        api.setFrameGroupAttr({
+                            name: frmNames[i],
+
+                            hidden: true
+                        });
+                    } else {
+                        api.setFrameAttr({
+                            name: frmNames[i],
+
+                            hidden: true
+                        });
+                    }
+                } else {
+                    if (i == 0) {
+                        openFrameGro();
+                        api.setFrameGroupAttr({
+                            name: frmNames[i],
+
+                            hidden: false
+                        });
+                    } else {
+                        api.openFrame({
+                            name: frmNames[i],
+
+                            url: './html/frm_' + frmNames[i] + '.html',
+                            rect: {
+                                x: 0,
+                                y: $api.byId('header').offsetHeight,
+                                w: 'auto',
+                                h: $api.byId('content').offsetHeight
+                            },
+                            pageParam: {
+                                name: 'value'
+                            },
+                            bounces: true
+                        });
+                        api.setFrameAttr({
+                            name: frmNames[i],
+
+                            hidden: false
+                        });
+
+                    }
+
+                }
+            }
+
+
+        }
+    </script>
+
+</html>

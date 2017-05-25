@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <style>
+            html,
+            body {
+                height: 100%;
+                font-family: '微软雅黑';
+                background-color: #ececec;
+            }
+            
+            .aui-list-view {
+                margin-top: 30px;
+            }
+            
+            .aui-list-view-cell {
+                display: -webkit-box;
+                display: -webkit-flex;
+            }
+            
+            .text {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ul class="aui-list-view" onclick="selectSchool();">
+            <li class="aui-list-view-cell" data-win="list_arrow">
+                <div class="aui-arrow-right aui-ellipsis-1">
+                    请选择高校 :
+                </div>
+                <div class="text">太原理工大学</div>
+            </li>
+        </ul>
+        <ul class="aui-list-view">
+            <li class="aui-list-view-cell" data-win="list_thumb">
+                <div class="aui-arrow-right aui-ellipsis-1">
+                    请选择类型 :
+                </div>
+                <div class="text">微党课</div>
+            </li>
+        </ul>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {};
+        function selectSchool(){
+            
+        }
+    </script>
+
+</html>

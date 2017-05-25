@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <style>
+            html,
+            body {
+                height: 100%;
+                font-size: 14px;
+                font-family: '微软雅黑';
+            }
+            
+            #wrap {
+                /*这里大盒子设置height为100%是必须的，如果没有，nav，content无法构成弹性盒子布局*/
+                height: 100%;
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                -webkit-box-orient: vertical;
+            }
+            
+            #nav {
+                height: 35px;
+                line-height: 35px;
+                /*display: -webkit-box;
+                display: -webkit-flex;*/
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            #nav .menu {
+                display: inline-block;
+                /* -webkit-box-flex: 1;
+                -webkit-flex: 1;*/
+                height: 35px;
+                line-height: 35px;
+                margin: 0 10px;
+                text-align: center;
+            }
+            
+            #nav .menu.active {
+                color: blue;
+            }
+            
+            #content {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div id="nav">
+                <div class="menu active" onclick="switchNavFrameGroup(0);" tapmode="">首页</div>
+                <div class="menu" onclick="switchNavFrameGroup(1);" tapmode="">工作案例</div>
+                <div class="menu" onclick="switchNavFrameGroup(2);" tapmode="">微党课</div>
+                <div class="menu" onclick="switchNavFrameGroup(3);" tapmode="">教师支部推荐展示</div>
+                <div class="menu" onclick="switchNavFrameGroup(4);" tapmode="">学生支部推荐展示</div>
+            </div>
+            <div id="content"></div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/iscroll.js"></script>
+    <script type="text/javascript">
+        var myScroll = false;
+
+        function loaded() {
+            try {
+                myScroll = new IScroll('#nav', {
+                    eventPassthrough: true,
+                    scrollX: true,
+                    scrollY: false,
+                    preventDefault: false
+                });
+            } catch (e) {
+                alert(e)
+            }
+        }
+        apiready = function() {
+    
+
+
+            loaded();
+            api.openFrameGroup({
+                name: 'recommend_group',
+                //这里的framegroup是在子frame中开启的，但x，y坐标仍然是相对于父页面计算，这里我加了个marginTop
+                rect: {
+                    x: 0, //左上角x坐标
+                    y: $api.byId('nav').offsetHeight, //左上角y坐标
+                    // y: 88,
+
+
+                    w: 'auto', //宽度，若传'auto'，页面从x位置开始自动充满父页面宽度
+                    h: $api.byId('content').offsetHeight,
+                    //宽度，若传'auto'，页面从x位置开始自动充满父页面宽度
+                    marginTop: 44 //相对父window上外边距的距离
+
+
+
+                },
+                scrollEnabled: true,
+                preload: 5,
+                frames: [{
+                    name: 'recommend_frmgro1',
+                    url: 'frm_recommend/recommend_frmgro1.html',
+                    pageParam: {
+                        name: 'value'
+                    }
+                }, {
+                    name: 'recommend_frmgro2',
+                    url: 'frm_recommend/recommend_frmgro2.html',
+                    pageParam: {
+                        name: 'value'
+                    }
+                }, {
+                    name: 'recommend_frmgro3',
+                    url: 'frm_recommend/recommend_frmgro3.html',
+                    pageParam: {
+                        name: 'value'
+                    }
+                }, {
+                    name: 'recommend_frmgro4',
+                    url: 'frm_recommend/recommend_frmgro4.html',
+                    pageParam: {
+                        name: 'value'
+                    }
+                }, {
+                    name: 'recommend_frmgro5',
+                    url: 'frm_recommend/recommend_frmgro5.html',
+                    pageParam: {
+                        name: 'value'
+                    }
+                }]
+            }, function(ret, err) {
+                if (ret) {
+                    for (var i = 0; i < 5; i++) {
+                        var recommendFrmGroList = $api.domAll('#nav .menu');
+                        if (ret.index == i) {
+                            $api.addCls(recommendFrmGroList[i], 'active');
+                        } else {
+                            $api.removeCls(recommendFrmGroList[i], 'active');
+                        }
+                    }
+                } else {
+                    // alert(JSON.stringify(err));
+                }
+                // if (ret.index >= 4) {
+                //     myScroll.scrollTo(-$("#nav .menu").width() * (ret.index - 4), 0, 1000);
+                // }
+            });
+        };
+        //点击framegroup导航改变导航样式以及打开子framegroup
+        function switchNavFrameGroup(index) {
+            var recommendFrmGroList = $api.domAll('#nav .menu');
+            for (var i = 0; i < recommendFrmGroList.length; i++) {
+                if (index == i) {
+                    $api.addCls(recommendFrmGroList[i], 'active');
+                } else {
+                    $api.removeCls(recommendFrmGroList[i], 'active');
+                }
+            }
+            api.setFrameGroupIndex({
+                name: 'recommend_group',
+                index: index,
+                scroll: true
+            });
+
+        }
+    </script>
+
+</html>

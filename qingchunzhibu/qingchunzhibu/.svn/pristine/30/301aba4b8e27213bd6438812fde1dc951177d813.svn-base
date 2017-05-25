@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>消息</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+        <link rel="stylesheet" type="text/css" href="../fonts1/iconfont.css" />
+        <style>
+            html,
+            body {
+                height: 100%;
+                font-family: '微软雅黑';
+                font-size: 14px;
+            }
+            
+            .wrapper {
+                height: 100%;
+            }
+            
+            .content {
+                display: -webkit-box;
+                display: -webkit-flex;
+                padding: 20px 20px;
+                border-bottom: 1px solid #ccc;
+                position: relative;
+            }
+            
+            .imgWrapper {
+                width: 20%;
+            }
+            
+            .imgWrapper .img {
+                width: 100%;
+                padding-top: 100%;
+                position: relative;
+            }
+            
+            .imgWrapper .img img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                border-radius: 100%;
+            }
+            
+            .text {
+                margin-left: 15px;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                display: -webkit-box;
+                display: -webkit-flex;
+                /* -webkit-flex-flow: column;
+                -webkit-box-orient: vertical;*/
+            }
+            
+            .text .textContent {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                position: relative;
+                display: -webkit-flex;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-flex-flow: column;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+            }
+            
+            .text .textContent h1 {
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                font-size: 16px;
+            }
+            
+            .text .textContent p {
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                font-size: 14px;
+                color: #888;
+            }
+            
+            .disc {
+                display: -webkit-flex;
+                display: -webkit-box;
+                -webkit-box-align: center;
+                -webkit-box-pack: center;
+                -webkit-align-items: center;
+                -webkit-justify-content: center;
+                width: 15px;
+                opacity: 0;
+            }
+            
+            .disc.active {
+                opacity: 1;
+            }
+            
+            .disc div {
+                width: 15px;
+                height: 15px;
+                background-color: #ce1423;
+                border-radius: 100%;
+            }
+            
+            .date {
+                position: absolute;
+                right: 20px;
+                bottom: 0;
+            }
+            
+            .date span {
+                font-size: 12px;
+                color: #888;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="content">
+                <div class="imgWrapper">
+                    <div class="img">
+                        <img src="../image/scenery.png">
+                    </div>
+                </div>
+                <div class="text">
+                    <div class="textContent">
+                        <h1>支部党员大会</h1>
+                        <p>针对……问题发起会议</p>
+                    </div>
+                    <div class="disc active">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="date">
+                    <span style="margin-right: 5px">2017-03-29</span>
+                    <span>13:44</span>
+                </div>
+            </div>
+            <div class="content">
+                <div class="imgWrapper">
+                    <div class="img">
+                        <img src="../image/scenery.png">
+                    </div>
+                </div>
+                <div class="text">
+                    <div class="textContent">
+                        <h1>支部党员大会</h1>
+                        <p>针对……问题发起会议</p>
+                    </div>
+                    <div class="disc active">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="date">
+                    <span style="margin-right: 5px">2017-03-29</span>
+                    <span>13:44</span>
+                </div>
+            </div>
+            <div class="content">
+                <div class="imgWrapper">
+                    <div class="img">
+                        <img src="../image/scenery.png">
+                    </div>
+                </div>
+                <div class="text">
+                    <div class="textContent">
+                        <h1>支部党员大会</h1>
+                        <p>针对……问题发起会议</p>
+                    </div>
+                    <div class="disc">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="date">
+                    <span style="margin-right: 5px">2017-03-29</span>
+                    <span>13:44</span>
+                </div>
+            </div>
+            <div class="content">
+                <div class="imgWrapper">
+                    <div class="img">
+                        <img src="../image/scenery.png">
+                    </div>
+                </div>
+                <div class="text">
+                    <div class="textContent">
+                        <h1>支部党员大会</h1>
+                        <p>针对……问题发起会议</p>
+                    </div>
+                    <div class="disc">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="date">
+                    <span style="margin-right: 5px">2017-03-29</span>
+                    <span>13:44</span>
+                </div>
+            </div>
+            <div class="content">
+                <div class="imgWrapper">
+                    <div class="img">
+                        <img src="../image/scenery.png">
+                    </div>
+                </div>
+                <div class="text">
+                    <div class="textContent">
+                        <h1>支部党员大会</h1>
+                        <p>针对……问题发起会议</p>
+                    </div>
+                    <div class="disc">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="date">
+                    <span style="margin-right: 5px">2017-03-29</span>
+                    <span>13:44</span>
+                </div>
+            </div>
+            <div class="content">
+                <div class="imgWrapper">
+                    <div class="img">
+                        <img src="../image/scenery.png">
+                    </div>
+                </div>
+                <div class="text">
+                    <div class="textContent">
+                        <h1>支部党员大会</h1>
+                        <p>针对……问题发起会议</p>
+                    </div>
+                    <div class="disc">
+                        <div></div>
+                    </div>
+                </div>
+                <div class="date">
+                    <span style="margin-right: 5px">2017-03-29</span>
+                    <span>13:44</span>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+            // init();
+            var content = $api.domAll('.content');
+            for (var i = 0; i < content.length; i++) {
+                content[i].onclick = function() {
+                    api.openWin({
+                        name: 'win_news_detailsForLeader',
+                        url: '../win_news/win_news_detailsForLeader.html',
+                        pageParam: {
+                            name: 'value'
+                        }
+                    });
+                    // api.openWin({
+                    //     name: 'win_news_details',
+                    //     url: '../win_news/win_news_details.html',
+                    //     pageParam: {
+                    //         name: 'value'
+                    //     }
+                    // });
+
+                }
+            }
+        };
+
+        function init() {
+            api.showProgress({
+                style: 'default',
+                animationType: 'fade',
+                title: '努力加载中...',
+                text: '先喝杯茶...',
+                modal: false
+            });
+
+        }
+    </script>
+
+</html>

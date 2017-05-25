@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>支部工作</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css">
+        <link rel="stylesheet" type="text/css" href="../fonts1/iconfont.css">
+        <style>
+            html,
+            body {
+                height: 100%;
+                font-family: '微软雅黑';
+                font-size: 14px;
+            }
+            
+            #header {
+                text-align: center;
+                overflow: hidden;
+                background-color: #b41f23;
+                height: 44px;
+                line-height: 44px;
+            }
+            
+            #header .topgroup {
+                display: -webkit-box;
+                display: -webkit-flex;
+            }
+            
+            #header .topgroup .back {
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                font-size: 25px;
+                font-weight: bold;
+            }
+            
+            #header .topgroup .right {
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                font-size: 16px;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+            
+            #header .topgroup .search {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                height: 44px;
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+            }
+            
+            #header .topgroup .search div {
+                width: 80%;
+                margin: 0 auto;
+                line-height: 26px;
+                background-color: #fff;
+                height: 26px;
+                border-radius: 10px;
+                text-align: left;
+                padding-left: 10px;
+                color: #ccc;
+            }
+            
+            #header .topgroup .search div span.iconfont {
+                color: #b41f23;
+                margin-right: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="header">
+            <!-- 这里必须额外加个盒子，消除沉浸式效果的影响 -->
+            <div class="topgroup">
+                <div class="back iconfont" onclick="api.closeWin();">&#xe600;</div>
+                <div class="search">
+                    <div>
+                        <span class="iconfont">&#xe603;</span>点击搜索
+                    </div>
+                </div>
+                <div class="right">搜 索</div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+
+
+            var header = $api.byId('header');
+            //适配iOS 7+，Android 4.4+状态栏
+            $api.fixStatusBar(header);
+            api.setStatusBarStyle({
+                style: 'light',
+                color: '#b41f23'
+            });
+            api.openFrame({
+                name: 'frmSchoolSearch',
+                url: './frmSchoolSearch.html',
+                rect: {
+                    x: 0,
+                    y: $api.byId('header').offsetHeight,
+                    w: 'auto',
+                    h: 'auto'
+                },
+                pageParam: {
+                    name: 'value'
+                },
+                bounces: false
+            });
+
+
+
+
+        };
+    </script>
+
+</html>

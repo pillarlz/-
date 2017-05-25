@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="./css/api.css" />
+        <link rel="stylesheet" type="text/css" href="./css/aui.css" />
+        <link rel="stylesheet" type="text/css" href="./css/aui-win.css" />
+        <style>
+            #main {
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                width: 100%;
+                height: 100%;
+                background-color: #ededed;
+                padding-top: 30px;
+            }
+            
+            .message_remind_row1 {
+                display: -webkit-box;
+                display: -webkit-flex;
+                /*justify-content: space-between;*/
+                -webkit-align-items: center;
+                -webkit-box-align: center;
+            }
+            
+            .message_remind_row1_1 {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                -webkit-justify-content: flex-start;
+                -webkit-box-pack: start;
+            }
+            
+            .message_remind_row1_2 {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                -webkit-justify-content: flex-end;
+                -webkit-box-pack: end;
+            }
+            
+            .message_remind_row2 {
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-box-orient: vertical;
+                -webkit-flex-flow: column;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="main">
+            <ul class="aui-list-view">
+                <li class="aui-list-view-cell message_remind_row1">
+                    <span class="message_remind_row1_1">接受新消息通知</span>
+                    <div class="message_remind_row1_2">
+                        <input type="checkbox" class="aui-switch aui-switch-success aui-pull-right" checked>
+                    </div>
+                </li>
+                <li class="aui-list-view-cell message_remind_row2">
+                    <div class="message_remind_row1">
+                        <span class="message_remind_row1_1">通知显示消息详情</span>
+                        <div class="message_remind_row1_2">
+                            <input type="checkbox" class="aui-switch aui-switch-success aui-pull-right">
+                        </div>
+                    </div>
+                    <span style="font-size: 13px;color: #a7aaa6">若关闭，当收到消息时，通知提示将不显示发信人和内容摘要</span>
+                </li>
+            </ul>
+            <ul class="aui-list-view">
+                <li class="aui-list-view-cell message_remind_row1">
+                    <span class="message_remind_row1_1">声音</span>
+                    <div class="message_remind_row1_2">
+                        <input type="checkbox" class="aui-switch aui-switch-success aui-pull-right" checked>
+                    </div>
+                </li>
+                <li class="aui-list-view-cell message_remind_row1">
+                    <span class="message_remind_row1_1">震动</span>
+                    <div class="message_remind_row1_2">
+                        <input type="checkbox" class="aui-switch aui-switch-success aui-pull-right">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script type="text/javascript" src="./script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+
+        };
+    </script>
+
+</html>

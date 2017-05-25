@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0' />
+		<meta name='format-detection' content='telephone=no,email=no,date=no,address=no'>
+		<title>公告</title>
+		<link rel='stylesheet' type='text/css' href='../css/api.css' />
+		<link rel='stylesheet' type='text/css' href='../fonts/iconfont.css' />
+		<link rel='stylesheet' type='text/css' href='../fonts1/iconfont.css' />
+		<style>
+			html, body {
+				height: 100%;
+				font-family: '微软雅黑';
+				font-size: 14px;
+			}
+			.wrapper {
+				height: 100%;
+			}
+			.content {
+				display: -webkit-box;
+				display: -webkit-flex;
+				padding: 10px 15px;
+				border-bottom: 1px solid #ccc;
+			}
+			.imgWrapper {
+				width: 33.3%;
+			}
+			.imgWrapper .img {
+				width: 100%;
+				padding-top: 70%;
+				position: relative;
+			}
+			.imgWrapper .img img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+			}
+			.text {
+				margin-right: 5px;
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				display: -webkit-box;
+				display: -webkit-flex;
+				-webkit-flex-flow: column;
+				-webkit-box-orient: vertical;
+			}
+			.text .textContent {
+				-webkit-box-flex: 1;
+				-webkit-flex: 1;
+				margin-top: 5px;
+			}
+			.text .textContent h1 {
+				display: -webkit-box;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				font-size: 16px;
+			}
+			.text .textBottom {
+				padding-left: 5px;
+			}
+			.text .textBottom li {
+			}
+			.text .textBottom li span {
+				color: #888;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='wrapper' id='notice_list'>
+			<!-- <div class='content'>
+			<div class='text'>
+			<div class='textContent'>
+			<h1>互联网+青年马克思主义培养 主义培养主义培养</h1>
+			</div>
+			<div class='textBottom'>
+			<ul>
+			<li>
+			<span class='iconfont' style='margin-right: 3px;'>&#xe60c;</span><span>中国大学生在线党支部</span>
+			</li>
+			</ul>
+			</div>
+			</div>
+			<div class='imgWrapper'>
+			<div class='img'>
+			<img src='../image/qingzexiaojiangtang.png'>
+			</div>
+			</div>
+			</div> -->
+			<!--  <div class='content'>
+			<div class='text'>
+			<div class='textContent'>
+			<h1>互联网+青年马克思主义培养 主义培养主义培养</h1>
+			</div>
+			<div class='textBottom'>
+			<ul>
+			<li>
+			<span class='iconfont' style='margin-right: 3px;'>&#xe60c;</span><span>中国大学生在线党支部</span>
+			</li>
+			</ul>
+			</div>
+			</div>
+			<div class='imgWrapper'>
+			<div class='img'>
+			<img src='../image/qingzexiaojiangtang.png'>
+			</div>
+			</div>
+			</div>
+			<div class='content'>
+			<div class='text'>
+			<div class='textContent'>
+			<h1>互联网+青年马克思主义培养 主义培养主义培养</h1>
+			</div>
+			<div class='textBottom'>
+			<ul>
+			<li>
+			<span class='iconfont' style='margin-right: 3px;'>&#xe60c;</span><span>中国大学生在线党支部</span>
+			</li>
+			</ul>
+			</div>
+			</div>
+			<div class='imgWrapper'>
+			<div class='img'>
+			<img src='../image/qingzexiaojiangtang.png'>
+			</div>
+			</div>
+			</div>
+			<div class='content'>
+			<div class='text'>
+			<div class='textContent'>
+			<h1>互联网+青年马克思主义培养 主义培养主义培养</h1>
+			</div>
+			<div class='textBottom'>
+			<ul>
+			<li>
+			<span class='iconfont' style='margin-right: 3px;'>&#xe60c;</span><span>中国大学生在线党支部</span>
+			</li>
+			</ul>
+			</div>
+			</div>
+			<div class='imgWrapper'>
+			<div class='img'>
+			<img src='../image/qingzexiaojiangtang.png'>
+			</div>
+			</div>
+			</div>
+			<div class='content'>
+			<div class='text'>
+			<div class='textContent'>
+			<h1>互联网+青年马克思主义培养 主义培养主义培养</h1>
+			</div>
+			<div class='textBottom'>
+			<ul>
+			<li>
+			<span class='iconfont' style='margin-right: 3px;'>&#xe60c;</span><span>中国大学生在线党支部</span>
+			</li>
+			</ul>
+			</div>
+			</div>
+			<div class='imgWrapper'>
+			<div class='img'>
+			<img src='../image/qingzexiaojiangtang.png'>
+			</div>
+			</div>
+			</div>
+			<div class='content'>
+			<div class='text'>
+			<div class='textContent'>
+			<h1>互联网+青年马克思主义培养 主义培养主义培养</h1>
+			</div>
+			<div class='textBottom'>
+			<ul>
+			<li>
+			<span class='iconfont' style='margin-right: 3px;'>&#xe60c;</span><span>中国大学生在线党支部</span>
+			</li>
+			</ul>
+			</div>
+			</div>
+			<div class='imgWrapper'>
+			<div class='img'>
+			<img src='../image/qingzexiaojiangtang.png'>
+			</div>
+			</div>
+			</div> -->
+		</div>
+	</body>
+	<script type='text/javascript' src='../script/api.js'></script>
+	<script type='text/javascript'>
+		var notice_list;
+		var html = '';
+		var offset;
+		apiready = function() {
+		api.showProgress({
+                    style: 'default',
+                    animationType: 'fade',
+                    title: '努力加载中...',
+                    text: '先喝杯茶...',
+                    modal: false
+                });
+			notice_list = $api.byId('notice_list');
+			offset = 0;
+			// init();
+			fetchNotices(0, function(ret, err) {
+				api.showProgress({
+					style : 'default',
+					animationType : 'fade',
+					title : '努力加载中...',
+					text : '先喝杯茶...',
+					modal : false
+				});
+				for (var i = 0; i < ret.length; i++) {
+					var tmp = '<div class="content" onclick="openContentWin(' + ret[i].id + ')">' + '<div class="text">' + '<div class="textContent">' + '<h1>' + ret[i].title + '</h1>' + '</div>' + '<div class="textBottom">' + '<ul>' + '<li>' + '<span class="iconfont" style="margin-right: 3px;">&#xe60c;</span><span>' + ret[i].author + '</span>' + '</li>' + '</ul>' + '</div>' + '</div>' + '<div class="imgWrapper">' + '<div class="img">' + '<img src="' + ret[i].imgUrl + '">' + '</div>' + '</div>' + '</div>';
+					html += tmp;
+				}
+				//			notice_list.innerHTML = html;
+				$api.html(notice_list, html);
+				api.hideProgress();
+			});
+		}
+		function fetchNotices(offset, callback) {
+			api.ajax({
+				url : 'http://47.92.28.251:1024/notice/' + offset + '/list',
+				method : 'get',
+			}, function(ret, err) {
+				callback(ret, err);
+			});
+		}
+
+		/*将第几个页面的id传给noticed，*/
+		function openContentWin(noticeId) {
+			api.openWin({
+				name : 'win_noticeContent',
+				url : '../win_notice/win_noticeContent.html',
+				pageParam : {
+					noticeId : noticeId
+				}
+			});
+		}
+
+		// function init() {
+
+		// 	/*下拉刷新*/
+		// 	api.setRefreshHeaderInfo({
+		// 		visible : true,
+		// 		loadingImg : 'widget://image/refresh.png',
+		// 		bgColor : '#ccc',
+		// 		textColor : '#fff',
+		// 		textDown : '下拉刷新...',
+		// 		textUp : '松开刷新...',
+		// 		showTime : true
+		// 	}, function(ret, err) {
+		// 		if (ret) {
+		// 			fetchNotices(0, function(ret, err) {
+		// 				for (var i = 0; i < ret.length; i++) {
+		// 					var tmp = '<div class="content" onclick="openContentWin(' + ret[i].id + ')">' + '<div class="text">' + '<div class="textContent">' + '<h1>' + ret[i].title + '</h1>' + '</div>' + '<div class="textBottom">' + '<ul>' + '<li>' + '<span class="iconfont" style="margin-right: 3px;">&#xe60c;</span><span>' + ret[i].author + '</span>' + '</li>' + '</ul>' + '</div>' + '</div>' + '<div class="imgWrapper">' + '<div class="img">' + '<img src="' + ret[i].imgUrl + '">' + '</div>' + '</div>' + '</div>';
+		// 					html += tmp;
+		// 				}
+		// 				//			notice_list.innerHTML = html;
+		// 				$api.html(notice_list, html);
+		// 				api.setRefreshHeaderInfo();
+		// 				alert("刷新成功！");
+		// 			});
+		// 		} else {
+		// 			alert("刷新失败！");
+		// 		}
+		// 	});
+		// 	/*上拉加载*/
+		// 	api.addEventListener({
+		// 		name : 'scrolltobottom',
+		// 		extra : {
+		// 			threshold : 0
+		// 		}
+		// 	}, function(ret, err) {
+  //               api.showProgress({
+  //                   style: 'default',
+  //                   animationType: 'fade',
+  //                   title: '努力加载中...',
+  //                   text: '先喝杯茶...',
+  //                   modal: false
+  //               });    
+		// 		fetchArticles(offset,function(ret, err) {
+		// 			if (ret) {
+		// 				if (ret.length < 10) {
+		// 					alert("到达底部！");
+		// 					return;
+		// 				}
+                        
+		// 				for (var i = 0; i < ret.length; i++) {
+		// 					var newDate = new Date(ret[i].createdAt);
+		// 					var showTime = newDate.toLocaleString();
+		// 					var tmp = '<div class="content" onclick="openContentWin(' + ret[i].id + ')">' + '<div class="text">' + '<div class="textContent">' + '<h1>' + ret[i].title + '</h1>' + '</div>' + '<div class="textBottom">' + '<ul>' + '<li>' + '<span class="iconfont" style="margin-right: 3px;">&#xe60c;</span><span>' + ret[i].author + '</span>' + '</li>' + '</ul>' + '</div>' + '</div>' + '<div class="imgWrapper">' + '<div class="img">' + '<img src="' + ret[i].imgUrl + '">' + '</div>' + '</div>' + '</div>';
+		// 					html += tmp;
+		// 				}
+		// 				$api.html(notice_list, $api.html(notice_list) + html);
+		// 				alert("加载成功！");
+						
+		// 				offset += 10;
+		// 			} else {
+		// 				alert("加载失败！");
+		// 			}
+  //                   api.hideProgress();
+		// 		});
+		// 	});
+		//}
+	</script>
+</html>

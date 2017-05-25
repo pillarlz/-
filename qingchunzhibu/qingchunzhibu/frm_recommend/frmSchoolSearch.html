@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <style>
+            html,
+            body {
+                height: 100%;
+                font-family: '微软雅黑';
+                /*background-color: #ececec;*/
+            }
+            
+            .wrapper {
+                display: -webkit-box;
+                display: -webkit-flex;
+                height: 100%;
+            }
+            
+            .left {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                height: 100%;
+                border: 1px solid #c8c7cc;
+            }
+            
+            .right {
+                -webkit-box-flex: 3;
+                -webkit-flex: 3;
+                height: 100%;
+            }
+            
+            .right .rightLi {
+                display: none;
+                overflow-y: auto;
+                height: 100%;
+                background-color: #ececec;
+            }
+            
+            .right .rightLi.active {
+                display: block;
+            }
+            
+            .left .leftLi {
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                border-bottom: 1px solid #c8c7cc;
+            }
+            
+            .left .leftLi.active {
+                background-color: #ececec;
+            }
+            
+            .aui-list-view-cell {
+                display: -webkit-box;
+                display: -webkit-flex;
+            }
+            
+            .aui-list-view-cell .text {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+            }
+            
+            .aui-checkbox {
+                margin: 0;
+            }
+            
+            .aui-checkbox:checked:before,
+            .aui-checkbox.aui-checked:before {
+                top: 4px;
+                left: 4px;
+            }
+            
+            .aui-checkbox:checked:after,
+            .aui-checkbox.aui-checked:after {
+                top: 4px;
+                left: 5px;
+            }
+            
+            .aui-list-view {
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="left">
+                <div class="leftLi active">
+                    省份
+                </div>
+                <div class="leftLi">
+                    高校
+                </div>
+                <div class="leftLi">
+                    类型
+                </div>
+            </div>
+            <div class="right">
+                <div class="rightLi active" id="rightProvince">
+                    <ul class="aui-list-view aui-in">
+                        <li class="aui-list-view-cell">
+                            <div class="text">山西省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">河南省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">湖北省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">湖南省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">河北省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">黑龙江省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">甘肃省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">山西省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">河南省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">湖北省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">湖南省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">河北省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">黑龙江省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">甘肃省</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                    </ul>
+                </div>
+                <div class="rightLi">
+                    <ul class="aui-list-view aui-in">
+                        <li class="aui-list-view-cell">
+                            <div class="text">太原理工大学</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">启岩子弟小学</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">寅新女子学院</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">家里蹲大学</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">皇家理工</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                    </ul>
+                </div>
+                <div class="rightLi">
+                    <ul class="aui-list-view aui-in">
+                        <li class="aui-list-view-cell">
+                            <div class="text">微党课</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">工作案例</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">教师支部推荐展示</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                        <li class="aui-list-view-cell">
+                            <div class="text">学生支部推荐展示</div>
+                            <input type="checkbox" class="aui-checkbox aui-checkbox-danger aui-pull-right">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+
+            tab();
+
+        };
+        //选项卡
+        function tab() {
+            //选项切换
+            var leftLi = $api.domAll('.leftLi');
+            var rightLi = $api.domAll('.rightLi');
+            for (var i = 0; i < leftLi.length; i++) {
+                $api.attr(leftLi[i], 'index', i);
+
+                leftLi[i].onclick = function() {
+                    //判断点击的是不是高校
+                    if ($api.attr(this, 'index') == 1) {
+                        //取出省份里面所有复选框，检查是否选中，以及选中个数
+                        var rightProvince = $api.byId('rightProvince');
+                        var provinceInput = rightProvince.getElementsByTagName('input');
+                        var count = 0;
+                        for (var i = 0; i < provinceInput.length; i++) { //搜索有多少被选中的
+                            if (provinceInput[i].checked == true) {
+                                count++;
+                            }
+
+                        }
+                        if (count == 0) { //判断省份里的复选框是否有被选中的
+                            api.alert({
+                                title: '支部提醒',
+                                msg: '若要在高校中进行搜索，必须先选择高校所在省份',
+                            }, function(ret, err) {
+
+                            });
+                            return false; //提早退出点击函数
+                        }
+
+                    }
+                    for (var j = 0; j < leftLi.length; j++) { //清空样式
+                        $api.removeCls(leftLi[j], 'active');
+                        $api.removeCls(rightLi[j], 'active');
+                    }
+
+                    $api.addCls(this, 'active');
+                    $api.addCls(rightLi[$api.attr(this, 'index')], 'active');
+
+                }
+
+            }
+            //列表项与复选框联动
+            var text = $api.domAll('.text');
+            for (var i = 0; i < text.length; i++) {
+                text[i].onclick = function() {
+
+                    var input = $api.next(this); //取下一个兄弟元素
+                    if (input.checked == true) {
+                        input.checked = false;
+                    } else if (input.checked == false) {
+                        input.checked = true;
+                    }
+
+                }
+            }
+
+
+        }
+    </script>
+
+</html>

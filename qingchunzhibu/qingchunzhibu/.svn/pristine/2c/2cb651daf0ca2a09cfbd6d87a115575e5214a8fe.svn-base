@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>sign_in</title>
+        <link rel="stylesheet" type="text/css" href="./css/api.css" />
+        <link rel="stylesheet" type="text/css" href="./css/sign_in.css" />
+        <link rel="stylesheet" type="text/css" href="./fonts/iconfont.css">
+        <style type="text/css">
+            * {
+                font-family: "微软雅黑";
+                text-decoration: none;
+                list-style-type: none;
+            }
+            
+            html,
+            body {
+                height: 100%;
+            }
+            
+            #content {
+                width: 75%;
+                height: 100%;
+                margin: 0 auto;
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-box-orient: vertical;
+                -webkit-flex-flow: column;
+            }
+            
+            #logo {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-box-align: center;
+                -webkit-box-pack: center;
+                -webkit-align-items: center;
+                -webkit-justify-content: center;
+            }
+            
+            #form {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+            }
+            
+            .sign_in_logo {
+                position: relative;
+                width: 40%;
+                padding-top: 40%;
+            }
+            
+            .sign_in_logo img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+            
+            #sign_in_form {
+                width: 100%;
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-box-orient: vertical;
+                -webkit-flex-flow: column;
+            }
+            
+            .sign_in_number {
+                width: 100%;
+                border-bottom: 1px solid #BE1919;
+                display: -webkit-box;
+                display: -webkit-flex;
+            }
+            
+            .sign_in_number label {
+                line-height: 45px;
+                padding: 0 7px;
+            }
+            
+            .sign_in_number input {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                outline: 0;
+            }
+            
+            .sign_in_input {
+                height: 50px;
+            }
+            
+            .sign_in_button {
+                width: 100%;
+                padding: 10px 0;
+                font-size: 16px;
+                border-radius: 10px;
+                border: 1px solid #BE1919;
+                background-color: #be1919;
+                letter-spacing: 5px;
+                color: #ffffff;
+                font-weight: bold;
+                outline: 0;
+            }
+            
+            .sign_in_form .sign_in_number {
+                height: 45px;
+            }
+            
+            input::-webkit-input-placeholder {
+                color: #BE1919;
+            }
+            
+            .icon1 {
+                color: #BE1919;
+                font-size: 26px;
+                font-weight: 500;
+            }
+            
+            .sign_in_number label {
+                color: #974157;
+                font-weight: bold;
+            }
+            
+            .sign_in_row3 {
+                width: 100%;
+                padding-top: 7%;
+            }
+            
+            .sign_in_row4 {
+                width: 100%;
+                margin-top: 10px;
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-justify-content: flex-end;
+                -webkit-box-pack: end;
+            }
+            
+            .sign_in_row4 a {
+                color: #BE1919;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="content">
+            <div id="logo">
+                <div class="sign_in_logo">
+                    <img src="image/sign_in_logo.png">
+                </div>
+            </div>
+            <div id="form">
+                <form id='sign_in_form' class="sign_in_form">
+                    <div class="sign_in_number">
+                        <label><i class="iconfont icon1">&#xe60c;</i></label>
+                        <input id='text' type="text" class="sign_in_input" placeholder=" 账号">
+                    </div>
+                    <div class="sign_in_number">
+                        <label><i class="iconfont icon1">&#xe62e;</i></label>
+                        <input id='password' type="password" class="sign_in_input" placeholder=" 密码">
+                    </div>
+                    <div class="sign_in_row3">
+                        <button id="sign_in_button" type="button" class="sign_in_button" onclick="openMain();">
+                            登 录
+                        </button>
+                    </div>
+                    <div class="sign_in_row4">
+                        <a href="#">忘记密码？</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="./script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+            api.addEventListener({
+                name: 'viewdisappear'
+            }, function(ret, err) {
+                api.closeWin();
+            });
+        };
+
+        function openMain() {
+            api.openWin({
+                name: 'main',
+                url: 'main.html',
+                pageParam: {
+                    name: 'value'
+                }
+            });
+        }
+    </script>
+
+</html>

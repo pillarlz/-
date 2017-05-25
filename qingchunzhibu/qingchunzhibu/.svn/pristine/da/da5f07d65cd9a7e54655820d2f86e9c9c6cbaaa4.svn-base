@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>Hello APP</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui-win.css" />
+        <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+        <style>
+            #con {
+                height: 30px;
+                background-color: #ededed;
+            }
+            
+            #my_content {
+                width: 100%;
+            }
+            
+            .my_information {
+                /*border:1px solid black;*/
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-align-items: center;
+                -webkit-box-align: center;
+            }
+            
+            .my_photo {
+                width: 25%;
+            }
+            
+            .my_photo img {
+                width: 100%;
+                border-radius: 100%;
+            }
+            
+            .iconmy {
+                color: #5ea7d6;
+                font-size: 22px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="con"></div>
+        <div id="my_content">
+            <ul class="aui-list-view">
+                <li class="aui-list-view-cell" data-win="list_arrow" onclick="openMyInformation();" tapmode="">
+                    <div class="aui-arrow-right my_information">
+                        <div class="my_photo ">
+                            <img src="../image/my_photo.png" />
+                        </div>
+                        <span style="margin-left: 20px">帅帅</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="aui-list-view">
+                <li class="aui-list-view-cell" data-win="list_arrow" onclick="openBranchManagement();" tapmode="">
+                    <div class="aui-arrow-right"><i class="iconfont iconmy">&#xe61d;</i> &nbsp;&nbsp;&nbsp;支部管理</div>
+                </li>
+            </ul>
+            <ul class="aui-list-view">
+                <li class="aui-list-view-cell" data-win="list_arrow">
+                    <div class="aui-arrow-right"><i class="iconfont iconmy">&#xe60d;</i> &nbsp;&nbsp;&nbsp;新手帮助</div>
+                </li>
+                <li class="aui-list-view-cell" data-win="list_thumb" onclick="openSetting();" tapmode="">
+                    <div class="aui-arrow-right"><i class="iconfont iconmy">&#xe60a;</i> &nbsp;&nbsp;&nbsp;设置</div>
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+
+
+        };
+
+        function openMyInformation() {
+            api.openWin({
+                name: 'win_myInformation',
+                url: '../win_my/win_myInformation.html',
+                pageParam: {
+                    name: 'test'
+                }
+            });
+        }
+
+        function openBranchManagement() {
+            api.openWin({
+                name: 'win_BranchManagement',
+                url: '../win_my/win_BranchManagement.html',
+                pageParam: {
+                    name: 'test'
+                }
+            });
+        }
+
+        function openSetting() {
+            api.openWin({
+                name: 'win_Setting',
+                url: '../win_my/win_Setting.html',
+                pageParam: {
+                    name: 'test'
+                }
+            });
+        }
+    </script>
+
+</html>

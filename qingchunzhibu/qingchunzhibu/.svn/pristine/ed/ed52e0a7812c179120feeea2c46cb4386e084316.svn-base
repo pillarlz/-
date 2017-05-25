@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <title>title</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aui-win.css" />
+        <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+        <style>
+            html,
+            body {
+                height: 100%;
+                font-family: '微软雅黑';
+                font-size: 14px;
+            }
+            
+            .details_content {
+                height: 100%;
+                display: -webkit-flex;
+                -webkit-flex-flow: column;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+            }
+            
+            .main {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+            }
+            
+            .top_bg {
+                position: relative;
+                padding-top: 32%;
+            }
+            
+            .top_bg img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                -webkit-filter: blur(2px);
+            }
+            
+            .top_return {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                text-align: center;
+            }
+            
+            .top_return a {
+                color: #ffffff;
+                font-size: 25px;
+                font-weight: bold;
+            }
+            
+            .main {
+                position: relative;
+                background-color: #f0f0f0;
+                width: 100%;
+                z-index: 1;
+            }
+            
+            .main_image {
+                width: 70px;
+                height: 70px;
+                border: solid 1px #ffffff;
+                border-radius: 50%;
+                margin: 0 auto;
+                overflow: hidden;
+                transform: translateY(-50%);
+                position: relative;
+            }
+            
+            .main_image img {
+                width: 100%;
+                height: 100%;
+            }
+            
+            .main h5 {
+                text-align: center;
+                color: #000000;
+                font-size: 25px;
+            }
+            
+            .main_info_box {
+                text-align: center;
+            }
+            
+            .main_info {
+                height: 30px;
+                line-height: 30px;
+                font-weight: 500;
+            }
+            
+            .main_info_age i {
+                color: #55a2d4;
+                font-size: 17px;
+            }
+            
+            .main_info_address i {
+                color: #de4f38;
+                font-size: 20px;
+            }
+            
+            .details_row1 {
+                display: -webkit-box;
+                display: -webkit-flex;
+                justify-content: flex-start;
+                font-weight: 500;
+            }
+            
+            .details_row1 p {
+                margin-left: 10%;
+            }
+            
+            #footer {
+                height: 50px;
+                display: -webkit-box;
+                display: -webkit-flex;
+            }
+            
+            #footer div {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                display: -webkit-box;
+                display: -webkit-flex;
+                -webkit-box-align: center;
+                -webkit-box-pack: center;
+                -webkit-align-items: center;
+                -webkit-justify-content: center;
+            }
+            
+            #footer button {
+                font-size: 16px;
+                font-weight: 500;
+                border-radius: 5px;
+                outline: 0;
+            }
+            
+            .group_leader,
+            .committee {
+                color: #ffffff;
+                background-color: #1eb9f2;
+            }
+            
+            .delete_member {
+                color: #e01b1b;
+                background-color: #ffffff;
+                border: solid 1px #dadadc;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="details_content">
+            <div class="top" id="header">
+                <div class="topWrapper">
+                    <div class="top_bg">
+                        <img src="../image/cbd.jpg" />
+                        <div class="top_return" onclick="api.closeWin();">
+                            <a class="iconfont">&#xe600;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main_image">
+                    <img src="../image/shuijiao.jpg" />
+                </div>
+                <h5>大哥</h5>
+                <div class="main_info_box">
+                    <span class="main_info main_info_age">
+                    <i class="iconfont">&#xe616;</i>
+                    <span>120岁</span>
+                    </span>
+                    <span class="main_info main_info_address" style="margin-left: 15px">
+                    <i class="iconfont">&#xe606;</i>
+                    <span>山西省太原市</span>
+                    </span>
+                </div>
+                <ul class="aui-list-view" style="margin-top: 10%">
+                    <li class="aui-list-view-cell details_row1">
+                        <span>账号信息</span>
+                        <p>123456789</p>
+                    </li>
+                    <li class="aui-list-view-cell details_row1">
+                        <span>个性签名</span>
+                        <p>山不在高，有仙则名</p>
+                    </li>
+                </ul>
+                <ul class="aui-list-view">
+                    <li class="aui-list-view-cell details_row1">
+                        <span>电话号码</span>
+                        <p>987654321</p>
+                    </li>
+                </ul>
+            </div>
+            <div id="footer">
+                <div>
+                    <button type="button" class="group_leader">设为组长</button>
+                </div>
+                <div>
+                    <button type="button" class="committee">设为支委</button>
+                </div>
+                <div>
+                    <button type="button" class="delete_member">删除成员</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript">
+        apiready = function() {
+            var header = $api.byId('header');
+            //适配iOS 7+，Android 4.4+状态栏
+            $api.fixStatusBar(header);
+            api.setStatusBarStyle({
+                style: 'light',
+                color: '#b41f23'
+            });
+            api.addEventListener({
+                name: 'viewdisappear'
+            }, function(ret, err) {
+                api.closeWin();
+            });
+        };
+    </script>
+
+</html>
